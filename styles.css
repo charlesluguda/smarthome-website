@@ -34,6 +34,14 @@ a{
         font-size: 30px;
     }
 }
+@media screen and (max-width: 350px) {
+    .header{
+        font-size: 50px;
+    }
+    .sub_header{
+        font-size: 30px;
+    }
+}
 
 /*============================ NAVBAR STYLES ============================*/
 
@@ -110,6 +118,8 @@ nav a{
 .btn{
     padding: 10px 10px;
     border-radius: 5px;
+    /* width: 300px; */
+    margin: auto;
     border: none;
 }
 .btn_white{
@@ -144,25 +154,46 @@ nav a{
     color: var(--color-white);
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 60%;
     text-align: left;
-    margin: 5px 10px;
+    margin: 5px auto;
     padding: 10px 10px;
     font-weight: normal;
 }
-.cta .logo img{
+/* .cta .logo{
     width: 30px;
     height: 30px;
     margin: 5px 10px;
-}
+} */
 .cta .btn-primary{
     background: #000;
     box-shadow: 5px 7px 33px 1px rgba(0,0,0,0.57);
-    /* width: 190px; */
-    /* height: 70px; */
 }
 .btn-primary:hover{
     background: var(--secondary-color);
     transition: 0.2 ease;
+}
+
+@media screen and (max-width: 580px) {
+    .cta .logo{
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+    .cta{
+        font-size: .5rem;
+    }
+}
+@media screen and (max-width: 427px) {
+    .cta .logo img{
+        width: 15px;
+        height: 15px;
+        margin: 5px 10px;
+    }
+    .cta{
+        font-size: .5rem;
+    }
 }
 
 /*================================ HERO SECTION STYLES ============================*/
@@ -250,6 +281,9 @@ nav a{
     padding-top: 50px;
     text-align: center;
     justify-content: center;
+}
+.about_section .container{
+    width: 90%;
 }
 .about_section h2{
     margin-top: 50px;
@@ -406,13 +440,23 @@ nav a{
 }
 
 .subscribe{
-    background: var(--primary-color);
-    height: 200px;
-    border-radius: 15px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
     color: var(--color-white);
     align-items: center;
     display: flex;
+    justify-content: center;
+}
+.subscribe .grid_col-2{
+    display: grid;
     align-items: center;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: 60% 40%;
+    background: var(--primary-color);
+    border-radius: 15px;
 }
 .sub_content{
     text-align: left;
@@ -421,13 +465,139 @@ nav a{
 }
 .sub_content h2{
     font-size: 35px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .subscribe .btn{
+    margin-bottom: 10px;
     width: 150px;
     height: 50px;
     margin: auto;
 }
+@media screen and (max-width: 650px) {
+    .subscribe .grid_col-2{
+        display: grid;
+        height: 230px;
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 530px) {
+    .subscribe .grid_col-2{
+        display: grid;
+        height: 300px;
+        grid-template-columns: 1fr;
+    }
+    .sub_content h2{
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+}
+
+/*============================ FAQS SECTION =====================================*/
+.faqs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+  }
+  .faqs h2{
+    margin: 10px auto;
+  }
+  .faqs .line{
+    margin: 10px auto;
+  }
+  .questions {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px 10px;
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .center-sections {
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+  }
+  
+  .question {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    background: whitesmoke;
+    height: auto;
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .question-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .question-btn i{
+    border: none;
+    font-size: 18px;
+  }
+  
+  .question-title .minus-icon .plus-icon{
+    font-size: 10px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    margin: 2px 0px;
+  }
+  
+  .question-text {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  
+  .question-text p {
+    border-top: 1px solid black;
+    margin: 10px 0;
+  }
+  button{
+    padding: 0.1px 0.5px;
+    border: none;
+  }
+  
+  /* hide text*/
+  .question-text{
+    display: none;
+  }
+  .show-text .question-text{
+    display: block;
+  }
+  .question-btn .minus-icon{
+    display: none;
+  }
+  .show-text .minus-icon{
+    display: inline-block;
+  }
+  .show-text .plus-icon{
+    display: none;
+  }
+  
+  @media only screen and (max-width: 540px) {
+    .question{
+      width: 400px;
+    }
+  }
+  @media only screen and (max-width: 415px) {
+    .question{
+      width: 300px;
+    }
+  }
+  /*===========================FAQS ENDS HERE ============================*/
 
 
 /* ============================================ FOOTER ============================================== */
@@ -449,8 +619,6 @@ footer .grid_col-4{
     justify-content: start;
 }
 .cols{
-    /* display: grid; */
-    /* flex-direction: column; */
     justify-content: left;
     text-align: left;
     margin: 10px 10px;
@@ -469,8 +637,11 @@ footer .grid_col-4{
 }
 .cols input{
     padding: 5px 5px;
-    border: 1px solid var(--color-white);
+    border: 2px solid var(--color-white);
     background: var(--primary-color);
+}
+.cols input::placeholder{
+    color: var(--color-white);
 }
 .cols input:active{
     border: 1px solid var(--color-white);
