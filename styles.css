@@ -52,7 +52,7 @@ nav{
     display: flex;
     align-items: center;
     text-align: center;
-    justify-content: center;
+    justify-content: space-between;
     z-index: 2;
     font-size: 18px;
     text-transform: capitalize;
@@ -86,7 +86,9 @@ nav a{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 30px;
+    color: var(--color-white);
+    margin-right: 30px;
+    font-size: 22px;
 }
 .container{
     width: 80%;
@@ -101,36 +103,49 @@ nav a{
     align-items: center;
 }
 @media screen and (min-width: 701px) {
-    .togle-menu{
+    .nav_aside{
         display: none;
     }
 }
 @media screen and (max-width: 700px) {
-    .nav-link{
+    .nav_links{
         position: absolute;
-        right: 0px;
         top: 60px;
+        right: 0;
         width: 100%;
         background: var(--primary-color);
         display: flex;
         flex-direction: column;
-        height: 300px;
+        height: 250px;
+        padding: 10px 10px;
         opacity: 0;
     }
     .showlinks{
         position: absolute;
-        right: 0px;
         top: 60px;
+        right: 0;
         width: 100%;
         background: var(--primary-color);
         display: flex;
         flex-direction: column;
-        height: 300px;
+        height: 250px;
+        padding: 10px 10px;
+        animation: cubic-bezier(0.55, 0.055, 0.675, 0.19) linear 0s alternate sun-rise;
         /* opacity: 0; */
     }
-    .nav_links{
-        display: flex;
-        flex-direction: column;
+    @keyframes sun-rise {
+  from {
+    /* pushes the sun down past the viewport */
+    transform: translateY(-110vh);
+  }
+  to {
+    /* returns the sun to its default position */
+    transform: translateY(0);
+  }
+}
+    .showlinks li{
+        padding: 8px 10px;
+        border-bottom: 1px solid var(--color-white);
     }
 }
 
